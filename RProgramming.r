@@ -21,7 +21,7 @@ i <- 1
       datos <- read.csv(files_list[i])
       cond <- !is.na(datos["nitrate"])&&!is.na(datos["sulfate"])
       nobs <- length(cond)
-      z[i,1] <- i
+      z[i,1] <- id[i]
       z[i,2] <- nobs
       i = i + 1
   }
