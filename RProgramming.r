@@ -19,7 +19,8 @@ z <- matrix(nrow=length(id),ncol=2)
 i <- 1
   for(fid in id){
       datos <- read.csv(files_list[i])
-      nobs <- length(!is.na(datos))
+      cond <- !is.na(datos["nitrate"])&&!is.na(datos["sulfate"])
+      nobs <- length(cond)
       z[i,1] <- i
       z[i,2] <- nobs
       i = i + 1
